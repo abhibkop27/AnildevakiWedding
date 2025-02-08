@@ -33,8 +33,7 @@
             "polyfills": ["zone.js"],
             "scripts": [],
             "styles": ["src/global_styles.css"],
-            "tsConfig": "tsconfig.app.json",
-            "baseHref": "/https://github.com/abhibkop27/AnildevakiWedding.git/" 
+            "tsConfig": "tsconfig.app.json"
           }
         },
         "serve": {
