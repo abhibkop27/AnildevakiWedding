@@ -1,0 +1,261 @@
+/* Add application styles & imports to this file! */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap');
+
+@keyframes mandalaRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmerGold {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #330867 0%, #8e0e00 100%);
+  min-height: 100vh;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+}
+
+/* Responsive container */
+.wedding-card {
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: clamp(1.F, 5vw, 4rem);
+  background: #fff1e6;
+  border-radius: clamp(15px, 3vw, 30px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out;
+  border: 2px solid #ffd700;
+}
+
+/* Responsive decorative elements */
+.wedding-card::before,
+.wedding-card::after {
+  content: '';
+  position: absolute;
+  width: clamp(100px, 20vw, 200px);
+  height: clamp(100px, 20vw, 200px);
+  background-image: url('https://raw.githubusercontent.com/stackblitz/stackblitz-icons/main/public/mandala.svg');
+  background-size: contain;
+  opacity: 0.1;
+  animation: mandalaRotate 30s linear infinite;
+  pointer-events: none;
+}
+
+.wedding-card::before {
+  top: -25px;
+  left: -25px;
+}
+
+.wedding-card::after {
+  bottom: -25px;
+  right: -25px;
+  transform: rotate(180deg);
+}
+
+/* Responsive typography */
+.title {
+  font-family: 'Bodoni Moda', serif;
+  /* font-size: clamp(3.5rem, 6vw, 2rem); */
+  font-size: 2.5rem;
+  margin-top: 50px;
+  color: #8e0e00;
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: fadeInUp 1s ease-out;
+  line-height: 1.2;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  width: clamp(100px, 15vw, 150px);
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  margin: 1rem auto;
+}
+
+.names {
+  font-size: 3rem;
+  color: #330867;
+  margin-top: 25px;
+  /* margin: clamp(1rem, 3vw, 2rem) 0; */
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 800;
+  letter-spacing: clamp(1px, 0.5vw, 3px);
+  animation: fadeInUp 1.2s ease-out;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.invitation-text {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: #4a4a4a;
+  margin: 10px;
+  text-align: center;
+  margin: clamp(1.5rem, 4vw, 1rem) 0;
+  line-height: 1.8;
+  font-weight: 300;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+/* Responsive details section */
+.details {
+  /* margin: clamp(2rem, 5vw, 4rem) 0; */
+  margin: 35px;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: rgba(255, 215, 0, 0.05);
+  border-radius: clamp(10px, 2vw, 20px);
+  animation: fadeInUp 1.6s ease-out;
+  position: relative;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.detail-item {
+  margin: clamp(1.5rem, 3vw, 1.5rem) 0;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: #333;
+  transition: all 0.4s ease;
+}
+
+.detail-item strong {
+  display: block;
+  color: #8e0e00;
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  margin-bottom: clamp(0.4rem, 1vw, 0.8rem);
+}
+
+/* Responsive links and buttons */
+.venue-link {
+  color: #330867;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: clamp(0.5rem, 1.5vw, 1rem);
+  border-bottom: 1px dashed #330867;
+  padding-bottom: 2px;
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+}
+
+.venue-link:hover {
+  color: #8e0e00;
+  border-bottom-color: #8e0e00;
+}
+
+.accept-btn {
+  background: linear-gradient(45deg, #8e0e00, #330867);
+  color: white;
+  border: none;
+  padding: clamp(1rem, 2.5vw, 1.5rem) clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: clamp(1px, 0.3vw, 2px);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  animation: fadeInUp 1.8s ease-out;
+  border: 2px solid transparent;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.accept-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(142, 14, 0, 0.3);
+  border-color: #ffd700;
+}
+
+/* Responsive modal */
+.thank-you-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff1e6;
+  padding: clamp(2rem, 5vw, 4rem);
+  border-radius: clamp(10px, 2vw, 20px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  animation: fadeInUp 0.5s ease-out;
+  max-width: min(600px, 90%);
+  width: 90%;
+  border: 2px solid #ffd700;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(51, 8, 103, 0.9);
+  z-index: 999;
+  backdrop-filter: blur(5px);
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.modal-title {
+  font-family: 'Bodoni Moda', serif;
+  color: #8e0e00;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  line-height: 1.2;
+}
+
+.modal-text {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  line-height: 1.8;
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  color: #4a4a4a;
+  font-weight: 300;
+}
+
+/* Media query for very small screens */
+@media (max-width: 350px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .wedding-card {
+    padding: 1rem;
+  }
+  
+  .details {
+    padding: 1rem;
+  }
+  
+  .thank-you-modal {
+    padding: 1.5rem;
+  }
+}
